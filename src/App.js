@@ -1,25 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { createContext, useState } from "react";
+import ImageFilter from "./component/ImageFilter/ImageFilter";
+export const FilterContext = createContext();
 
 function App() {
+  const [filterClass, setFilterClass] = useState("");
+  const value = {
+    filterClass,
+    setFilterClass,
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FilterContext.Provider value={value}>
+      <ImageFilter />
+    </FilterContext.Provider>
   );
 }
 
