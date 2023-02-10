@@ -31,7 +31,12 @@ const ImageFilter = () => {
 
   const renderImage = () => (
     <div>
-      <img className={filterClass} src={imageFile} alt="" ref={imgResultRef} />
+      <img
+        className={(filterClass, "image_tag")}
+        src={imageFile}
+        alt=""
+        ref={imgResultRef}
+      />
     </div>
   );
   return (
