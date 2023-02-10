@@ -31,14 +31,10 @@ const ImageFilter = () => {
 
   const renderImage = () => (
     <div>
-      <img
-        className={(filterClass, "image_tag")}
-        src={imageFile}
-        alt=""
-        ref={imgResultRef}
-      />
+      <img className={filterClass} src={imageFile} alt="" ref={imgResultRef} />
     </div>
   );
+
   return (
     <div>
       <div className="main-container">
@@ -53,6 +49,7 @@ const ImageFilter = () => {
             >
               {imageFile ? renderImage() : <p>Upload Image</p>}
             </div>
+
             <input
               onChange={handleChangeInput}
               ref={uploadImage}
